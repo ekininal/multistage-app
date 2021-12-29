@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: multistage
+spec:
+  selector:
+    matchLabels:
+      app: multistage
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: multistage
+    spec:
+      containers:
+        - name: multistage
+          image: ekininaal/app-multi-stage:v3
+          ports:
+            - containerPort: 9001
