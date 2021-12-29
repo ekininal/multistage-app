@@ -1,0 +1,10 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: multiapp-svc
+spec:
+  selector:
+    app: multistage
+  ports:
+    # Default port used by the image
+    - port: 9001
